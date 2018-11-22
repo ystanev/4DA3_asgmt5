@@ -63,7 +63,7 @@ class Perceptron(object):
                 self.w_[0] += update
                 errors += int(update != 0.0)
             self.errors_.append(errors)
-            print "Weights: ", "\t", self.w_  # output the weighs for each iteration
+            print ("Weights: ", "\t", self.w_)  # output the weighs for each iteration
         return self
 
     def net_input(self, X):
@@ -78,4 +78,4 @@ class Perceptron(object):
 perceptron = Perceptron()  # creates an object from class Perceptron()
 
 perceptron.fit(X, y)
-print "\n", "Class: ", perceptron.predict(X)
+print ("\n", "Class: ", perceptron.predict(X))
