@@ -7,6 +7,7 @@ X = rawTrainingData[:, 0:2]  # attributes
 y = rawTrainingData[:, 2]  # class
 # print x, y
 
+
 class AdalineGD(object):
     """ADAptive LInear NEuron classifier.
 
@@ -29,6 +30,7 @@ class AdalineGD(object):
       Sum-of-squares cost function value in each epoch.
 
     """
+
     def __init__(self, n_iter=8, eta=0.001, random_state=1):
         self.eta = eta
         self.n_iter = n_iter
@@ -69,7 +71,8 @@ class AdalineGD(object):
             self.w_[0] += self.eta * errors.sum()
             cost = (errors**2).sum() / 2.0
             self.cost_.append(cost)
-            print "Weights: ", "\t", self.w_  # output the weighs for each iteration
+            # output the weighs for each iteration
+            print ("Weights: ", "\t", self.w_)
         return self
 
     def net_input(self, X):
@@ -86,5 +89,5 @@ class AdalineGD(object):
 
 
 adaline = AdalineGD()
-adaline.fit(X,y)
-print "\n", "Class: ", adaline.predict(X)
+adaline.fit(X, y)
+print ("\n", "Class: ", adaline.predict(X))

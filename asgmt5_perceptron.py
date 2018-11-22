@@ -29,6 +29,7 @@ class Perceptron(object):
       Number of misclassifications (updates) in each epoch.
 
     """
+
     def __init__(self, eta=0.01, n_iter=3, random_state=1):
         self.eta = eta
         self.n_iter = n_iter
@@ -51,7 +52,7 @@ class Perceptron(object):
 
         """
 
-        rgen =random.RandomState(self.random_state)
+        rgen = random.RandomState(self.random_state)
         self.w_ = rgen.normal(loc=0.0, scale=0.01, size=1 + X.shape[1])
         self.errors_ = []
 
@@ -63,7 +64,8 @@ class Perceptron(object):
                 self.w_[0] += update
                 errors += int(update != 0.0)
             self.errors_.append(errors)
-            print ("Weights: ", "\t", self.w_)  # output the weighs for each iteration
+            # output the weighs for each iteration
+            print ("Weights: ", "\t", self.w_)
         return self
 
     def net_input(self, X):
